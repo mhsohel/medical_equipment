@@ -6,12 +6,15 @@ use App\Models\Menu;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreQuoteRequest;
 use App\Models\Quote;
+use App\Models\Slider;
 
 class FrontendController extends Controller
 {
     public function index()
     {
-        return view('frontend.index');
+        $data['sliders'] = Slider::all();
+
+        return view('frontend.index',$data);
     }
 
     public function singlePage($slug)

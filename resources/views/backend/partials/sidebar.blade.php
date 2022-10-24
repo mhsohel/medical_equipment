@@ -110,6 +110,16 @@
                 @endcan
 
                 <li class="nav-item">
+                    <a href="{{ route('admin.sliders.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-hospital-user"></i>
+
+                        <p>
+                            Slider
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('admin.menus.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-hospital-user"></i>
 
@@ -151,41 +161,29 @@
                 </li>
 
 
+
+
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-file"></i>
                         <p>
-                            Setup Management
+                            Quote
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('admin.quotes.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
 
-                                <p>Bank</p>
+                                <p>Un-read</p>
                             </a>
                         </li>
-
-
-                    </ul>
-                </li>
-
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-file"></i>
-                        <p>
-                            Reports
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('admin.mark.read') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
 
-                                <p>All Doctors</p>
+                                <p>Read</p>
                             </a>
                         </li>
 

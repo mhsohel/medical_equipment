@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Quote;
 use App\Http\Requests\StoreQuoteRequest;
 use App\Http\Requests\UpdateQuoteRequest;
+use Illuminate\Http\Request;
 
 class QuoteController extends Controller
 {
@@ -16,7 +17,8 @@ class QuoteController extends Controller
      */
     public function index()
     {
-        //
+        $quotes = Quote::where('status',0)->get();
+        return view('backend.quotes.index',compact('quotes'));
     }
 
     /**
@@ -69,9 +71,26 @@ class QuoteController extends Controller
      * @param  \App\Models\Quote  $quote
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateQuoteRequest $request, Quote $quote)
+    public function update(Request $request, Quote $quote)
     {
-        //
+        // return $request->all();
+
+        if($request->read == "read")
+        {
+            $quote->update([
+
+                'status' => 1,
+            ]);
+            notify()->success('Quote Successfully Mark As Read.', 'updated');
+            return redirect()->route('admin.quotes.index');
+        }else{
+            $quote->update([
+
+                'status' => 0,
+            ]);
+            notify()->success('Quote Successfully Mark As Read.', 'updated');
+            return redirect()->route('admin.quotes.index');
+        }
     }
 
     /**
@@ -82,6 +101,15 @@ class QuoteController extends Controller
      */
     public function destroy(Quote $quote)
     {
-        //
+        $quote->delete();
+        notify()->success("Quote Successfully Deleted", "Deleted");
+        return back();
+    }
+
+
+    public function markRead()
+    {
+        $quotes = Quote::where('status',1)->get();
+        return view('backend.quotes.read',compact('quotes'));
     }
 }

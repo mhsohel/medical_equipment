@@ -19,6 +19,8 @@ use App\Http\Controllers\Backend\MenuController;
 use App\Http\Controllers\Backend\MenudescriptionController;
 use App\Http\Controllers\Backend\PermissionController;
 use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Backend\QuoteController;
+use App\Http\Controllers\Backend\SliderController;
 
 Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
 
@@ -55,7 +57,10 @@ Route::delete('backups', [BackupController::class, 'clean'])->name('backups.clea
 
 
 // ...................setup Mamagement........................................... //
+Route::resource('sliders',SliderController::class);
 Route::resource('menus',MenuController::class);
 Route::resource('menudescriptions',MenudescriptionController::class);
 Route::resource('categories',CategoryController::class);
 Route::resource('products',ProductController::class);
+Route::resource('quotes',QuoteController::class);
+Route::get('mark-read',[QuoteController::class,'markRead'])->name('mark.read');

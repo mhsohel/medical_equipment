@@ -10,32 +10,18 @@
         <!-- Swiper -->
         <div class="swiper-container">
             <div class="swiper-wrapper">
+
+
+                @foreach ($sliders as $slider)
+
+
                 <div class="swiper-slide">
-                    <div class="cs_header_banner">
-                        <div class="container">
-                            <div class="cs_banner_text wow fadeIn slideInLeft" data-wow-duration="0.8s" style="visibility: visible; animation-duration: 0.8s; animation-name: slideInLeft;">
-                                <h5>Start shipping with us</h5>
-                                <h1><span>Safe & Secure</span><br>Courier Service</h1>
-                                <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum and the adene.</p>
-                                <div class="cs_banner_text_button">
-                                    <div class="cs_banner_read_button cs_main_btn">
-                                        <a href="javascript:void(0);">Read More</a>
-                                    </div>
-                                    <div class="cs_banner_tracking_button">
-                                        <a href="javascript:void(0);">Live Tracking</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="cs_header_banner cs_header_banner2">
+                    <div class="cs_header_banner" style="background-image: url('{{ asset('images/backend') }}/{{ $slider->image }}')">
                         <div class="container">
                             <div class="cs_banner_text">
-                                <h5>Start shipping with us</h5>
-                                <h1><span>Safe & Secure</span><br>Courier Service</h1>
-                                <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum and the adene.</p>
+                                <h5>{{ $slider->heading }}</h5>
+                                <h1><span>{{ $slider->title }}</span><br></h1>
+                                <p>{{ $slider->shortDesc }}</p>
                                 <div class="cs_banner_text_button">
                                     <div class="cs_banner_read_button cs_main_btn">
                                         <a href="javascript:void(0);">Read More</a>
@@ -48,25 +34,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide">
-                    <div class="cs_header_banner">
-                        <div class="container">
-                            <div class="cs_banner_text">
-                                <h5>Start shipping with us</h5>
-                                <h1><span>Safe & Secure</span><br>Courier Service</h1>
-                                <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum and the adene.</p>
-                                <div class="cs_banner_text_button">
-                                    <div class="cs_banner_read_button cs_main_btn">
-                                        <a href="javascript:void(0);">Read More</a>
-                                    </div>
-                                    <div class="cs_banner_tracking_button">
-                                        <a href="javascript:void(0);">Live Tracking</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <!-- Add Arrows -->
             <div class="swiper-button-next">Next <img class="next-prev img-fluid" src="{{asset('frontend')}}/images/index/next-arw.png" alt="images"></div>

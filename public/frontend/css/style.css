@@ -368,7 +368,7 @@ header {
 }
 /*=================Banner Style==================*/
 .cs_header_banner {
-    background-image: url(../images/index/banner_bg1.jpg);
+    /* background-image: url(../images/index/banner_bg1.jpg); */
     background-repeat: no-repeat;
     background-size: cover;
     padding: 200px 0 280px;
@@ -376,8 +376,9 @@ header {
     z-index: 1;
     width: 100%;
 }
+/*
 .cs_header_banner2 {
-    background-image: url(../images/index/banner_bg2.jpg);
+     background-image: url(../images/index/banner_bg2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     padding: 200px 0 280px;
@@ -385,6 +386,7 @@ header {
     z-index: 1;
     width: 100%;
 }
+*/
 .cs_header_banner h5,
 p,
 h1,
