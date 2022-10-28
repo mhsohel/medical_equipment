@@ -15,12 +15,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Menu Descriptions</h1>
+                    <h1>services</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                        <li class="breadcrumb-item active">Menu Descriptions</li>
+                        <li class="breadcrumb-item active">service</li>
                     </ol>
                 </div>
             </div>
@@ -35,9 +35,9 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Menu Descriptions</h3>
-                            <a href="{{ route('admin.menudescriptions.create') }}">
-                                <h3 class="card-title float-right">Create Page Descriptions</h3>
+                            <h3 class="card-title">service</h3>
+                            <a href="{{ route('admin.services.create') }}">
+                                <h3 class="card-title float-right">Create service</h3>
                             </a>
                         </div>
                         <!-- /.card-header -->
@@ -47,13 +47,13 @@
                                     <tr>
                                         <th class="text-center">Sl</th>
 
-                                        <th class="text-center">Image</th>
-                                        <th class="text-center">Title</th>
-                                        <th class="text-center">Menu</th>
+                                        <th class="text-center">Icon</th>
+                                        <th class="text-center">Name</th>
+                                        <th class="text-center">Titile</th>
 
 
-                                        <th class="text-center">Shor Descriptions</th>
                                         <th class="text-center">Descriptions</th>
+                                        <th class="text-center">Status</th>
 
 
 
@@ -62,27 +62,27 @@
                                 </thead>
                                 <tbody>
 
-                                    @foreach($descs as $key=>$post)
+                                    @foreach($services as $key=>$service)
 
                                     <tr>
                                         <td class="text-center text-muted">{{ $key + 1 }}</td>
                                         <td >
                                             <img
-                                        src="{{ asset('images/backend') }}/{{ $post->image }}" alt="post phot" width="100" height="100">
+                                        src="{{ asset('images/backend') }}/{{ $service->icon }}" alt="post phot" width="100" height="100">
 
                                         </td>
-                                        <td >{{ $post->menuTitle }}</td>
-                                        <td >{{ $post->menu->name }}</td>
-                                        <td >{{ Str::limit($post->shortDesc, 30) }}</td>
+                                        <td >{{ $service->name }}</td>
+                                        <td >{{ $service->title }}</td>
 
-                                        <td class="text-center">{{ Str::limit($post->description, 30) }}</td>
 
+                                        <td class="text-center">{!! Str::limit($service->description, 30) !!} </td>
+                                        <td >{{ $service->status == 1 ? 'Active':'Deactive' }}</td>
 
 
                                         <td class="text-center">
 
                                             <a class="btn btn-info btn-sm"
-                                                href="{{ route('admin.menudescriptions.edit',$post->id) }}"><i
+                                                href="{{ route('admin.services.edit',$service->id) }}"><i
                                                     class="fas fa-edit"></i>
                                                 <span>Edit</span>
                                             </a>
@@ -92,7 +92,7 @@
                                             data-toggle="modal"
                                             data-target="#deleteModal">Delete</a> --}}
 
-                                            <form action="{{ route('admin.menudescriptions.destroy',$post->id) }}"
+                                            <form action="{{ route('admin.services.destroy',$service->id) }}"
                                                 method="POST" style="display: inline;">
                                                 @csrf()
                                                 @method('DELETE')

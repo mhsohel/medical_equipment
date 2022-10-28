@@ -3,16 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
-use Illuminate\Http\Request;
-use App\Http\Requests\StoreQuoteRequest;
 use App\Models\Quote;
 use App\Models\Slider;
+use App\Models\Product;
+use App\Models\Service;
+use App\Models\Tagservice;
+use App\Models\Leadingpage;
+use Illuminate\Http\Request;
+use App\Models\Menudescription;
+use App\Http\Requests\StoreQuoteRequest;
 
 class FrontendController extends Controller
 {
     public function index()
     {
         $data['sliders'] = Slider::all();
+        $data['tagservices'] = Tagservice::where('status',1)->get();
+        $data['aboutus']= Menudescription::where('id',3)->first();
+        $data['us']= Leadingpage::take(1)->first();
+        $data['services']= Service::where('status',1)->get();
+        $data['products']= Product::where('status',1)->take(3)->get();
 
         return view('frontend.index',$data);
     }

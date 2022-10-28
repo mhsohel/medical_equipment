@@ -159,6 +159,37 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.services.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-hospital-user"></i>
+
+                        <p>
+                            Service
+
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('admin.leadingpages.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-hospital-user"></i>
+
+                        <p>
+                            Why Choose Us
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.tagservices.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-hospital-user"></i>
+
+                        <p>
+                            Tag Service
+
+                        </p>
+                    </a>
+                </li>
 
 
 

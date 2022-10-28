@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Menu;
 use App\Models\Setting;
 use Illuminate\Support\ServiceProvider;
+ use Illuminate\Contracts\View\View;
 
 class AppServiceProvider extends ServiceProvider
 {

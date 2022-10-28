@@ -1,26 +1,32 @@
 <?php
 
 
+use App\Models\Headingservice;
+use App\Models\Headingserviceicon;
 use Illuminate\Support\Facades\Route;
+
+
+use App\Http\Controllers\Backend\MenuController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\UserController;
-
+use App\Http\Controllers\Backend\QuoteController;
 
 use App\Http\Controllers\Backend\BackupController;
-use App\Http\Controllers\Backend\CategoryController;
+
+
 use App\Http\Controllers\Backend\ModuleController;
-use App\Http\Controllers\Backend\ProfileController;
-
-use App\Http\Controllers\Backend\SettingController;
-
-
-use App\Http\Controllers\Backend\DashboardController;
-use App\Http\Controllers\Backend\MenuController;
-use App\Http\Controllers\Backend\MenudescriptionController;
-use App\Http\Controllers\Backend\PermissionController;
-use App\Http\Controllers\Backend\ProductController;
-use App\Http\Controllers\Backend\QuoteController;
 use App\Http\Controllers\Backend\SliderController;
+use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Backend\ProfileController;
+use App\Http\Controllers\Backend\ServiceController;
+use App\Http\Controllers\Backend\SettingController;
+use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\HeadingserviceiconController;
+use App\Http\Controllers\Backend\PermissionController;
+use App\Http\Controllers\Backend\LeadingpageController;
+use App\Http\Controllers\Backend\MenudescriptionController;
+use App\Http\Controllers\Backend\TagserviceController;
 
 Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
 
@@ -62,5 +68,8 @@ Route::resource('menus',MenuController::class);
 Route::resource('menudescriptions',MenudescriptionController::class);
 Route::resource('categories',CategoryController::class);
 Route::resource('products',ProductController::class);
+Route::resource('services',ServiceController::class);
+Route::resource('leadingpages',LeadingpageController::class);
+Route::resource('tagservices',TagserviceController::class);
 Route::resource('quotes',QuoteController::class);
 Route::get('mark-read',[QuoteController::class,'markRead'])->name('mark.read');

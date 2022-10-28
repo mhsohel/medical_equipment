@@ -142,7 +142,7 @@
                     <div class="cs_contact_box" data-wow-duration="1.3s" style="visibility: visible; animation-duration: 0.8s; animation-name: slideInLeft;">
                         <img src="{{asset('frontend')}}/images/index/time.svg" class="img-fluid" alt="images">
                         <h1>Opening Hours</h1>
-                        <p>Monday - Friday 09.00 - 18.00<br> Saturday 09.00 - 14.00
+                        <p>{{ $about->timesheduling1 }}<br> {{ $about->timesheduling2 }}
                         </p>
                     </div>
                 </div>
